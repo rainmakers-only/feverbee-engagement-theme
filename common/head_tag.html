@@ -31,6 +31,9 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
         component.set('hostname', window.location.hostname);
 
         api.onPageChange((url, title) => {
+            console.log('url: ', url);
+            console.log('title: ', title);
+
             if (url == "/"){
                 $('html').addClass('show-experts-homepage');
                 component.set('displayCustomHomepage', true);
