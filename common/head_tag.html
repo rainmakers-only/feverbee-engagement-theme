@@ -31,10 +31,7 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
         component.set('hostname', window.location.hostname);
 
         api.onPageChange((url, title) => {
-            console.log('url: ', url);
-            console.log('title: ', title);
-
-            if (url == "/"){
+            if (url == "/sales-community/"){
                 $('html').addClass('show-experts-homepage');
                 component.set('displayCustomHomepage', true);
                 $('#main-outlet a').click(function(event){
@@ -71,7 +68,7 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
             else {
                 $('html').removeClass('show-experts-homepage');
                 $('#main-outlet a').click(function(){
-                    if ($(this).attr('href') == "/"){
+                    if ($(this).attr('href') == "/sales-community/"){
                         component.set('displayCustomHomepage', true);
                         $('.below-site-header-outlet.experts-homepage').removeClass("hidden");
                     }
@@ -158,7 +155,7 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
             <div class="wrap">
                 <h2>Engagement Boxes</h2>
                 <div class="box box-4">
-                    <a href="/">
+                    <a href="/sales-community/">
                         <div class="icon-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><defs><style>.cls-1{fill:none;stroke:#f29d33;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style></defs><title>Training_y</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><ellipse class="cls-1" cx="36" cy="13.48" rx="12.21" ry="12.47"/></g></g></svg>
                         </div>
@@ -241,7 +238,7 @@ $(document).ready(function(e) {
             $('#create-topic').click();
         } else {
             // If logged out, navigate to the home page
-            window.location.href = "/";
+            window.location.href = "/sales-community/";
         }
 
     });
@@ -257,7 +254,7 @@ $(document).ready(function(e) {
         if (!Discourse.User.current()) {
             // If logged out, navigate to the home page
             e.preventDefault();
-            window.location.href = "/";
+            window.location.href = "/sales-community/";
         }
 
     });
