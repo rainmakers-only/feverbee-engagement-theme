@@ -85,36 +85,7 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
 </script>
 <script type='text/x-handlebars' data-template-name='/connectors/below-site-header/experts-homepage'>
 {{#if displayCustomHomepage}}
-    <div class="experts-homepage-wrapper">
-        <div id="homepage-banner">
-            <div id="homepage-banner-inner">
-                <div id="homepage-banner-content">
-                    <div id="homepage-banner-content-inner">
-
-    {{#if collapseHomepage}}
-                        {{#if homeToDo_0}}
-                            <h3 id="cover_subtitle_whatnext">Things to Do</h3>
-                        {{else}}
-                            <h3 id="cover_subtitle_whatnext">What Next?</h3>
-                        {{/if}}
-    {{else}}
-                        <h1 id="cover_title">Cover Title</h1>
-                        <h2 id="cover_subtitle">Cover Subtitle</h2>
-    {{/if}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    {{#if collapseHomepage}}
-        {{#d-button action="showHomepage" id="show-homepage" class="btn" icon="plus"}} View Intro{{/d-button}}
-    {{else}}
-        {{#d-button action="hideHomepage" id="hide-homepage" class="btn" icon="minus"}}Seen It{{/d-button}}
-    {{/if}}
-
-    {{#if collapseHomepage}}
-
-    {{else}}
-
+  <div class="experts-homepage-wrapper">
     <div class="homepage-container">
 
         <div class="container topic-lists">
@@ -157,7 +128,6 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
                 <div class="box box-4">
                     <a href="/sales-community/">
                         <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><defs><style>.cls-1{fill:none;stroke:#f29d33;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style></defs><title>Training_y</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><ellipse class="cls-1" cx="36" cy="13.48" rx="12.21" ry="12.47"/></g></g></svg>
                         </div>
                         <span>Box One</span>
                     </a>
@@ -220,9 +190,7 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
             </div>
         </div>
     </div>
-
-    {{/if}}
-    </div>
+  </div>
 {{/if}}
 </script>
 <script type="text/javascript">
