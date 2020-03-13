@@ -4,10 +4,30 @@ const ajax = require('discourse/lib/ajax').ajax;
 const Topic = require('discourse/models/topic').default;
 
 api.registerConnectorClass('below-site-header', 'experts-homepage', {
+    actions: {
+        hideHomepage(){
+            this.set('collapseHomepage', true);
+            $.cookie('collapse-homepage', true);
+            $('html').addClass('collapse-experts-homepage');
+        },
+        showHomepage(){
+            this.set('collapseHomepage', false);
+            $.cookie('collapse-homepage', false);
+            $('html').removeClass('collapse-experts-homepage');
+        }
+    },
     shouldRender(args, component) {
         return true;
     },
     setupComponent(args, component) {
+        if ($.cookie('collapse-homepage') == "true"){
+            component.set('collapseHomepage', true);
+            $('html').addClass('collapse-experts-homepage');
+        }
+        else{
+            component.set('collapseHomepage', false);
+            $('html').removeClass('collapse-experts-homepage');
+        }
         component.set('hostname', window.location.hostname);
 
         api.onPageChange((url, title) => {
@@ -170,7 +190,6 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
             </div>
         </div>
     </div>
-  </div>
   </div>
 {{/if}}
 </script>
